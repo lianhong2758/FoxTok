@@ -1,0 +1,3 @@
+package sq
+
+func Init() {}

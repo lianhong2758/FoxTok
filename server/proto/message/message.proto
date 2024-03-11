@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+
+option go_package = "server/proto/message;message";
+import "server/proto/common/message.proto";
+
+message MessageActionRequest {
+  string token = 1;      // 用户鉴权token
+  int64 to_user_id = 2;  // 对方用户id
+  int32 action_type = 3; // 1-发送消息
+  string content = 4;    // 消息内容
+}
+
+message MessageActionResponse {
+  int32 status_code = 1;          // 状态码，0-成功，其他值-失败
+  optional string status_msg = 2; // 返回状态描述
+}
+
+message MessageHistoryRequest {
+  string token = 1;     // 用户鉴权token
+  int64 to_user_id = 2; // 对方用户id
+  int64 pre_msg_time = 3; // 上次最新消息的时间（新增字段-apk更新中）
+}
+
+message MessageHistoryResponse {
+  int32 status_code = 1;             // 状态码，0-成功，其他值-失败
+  optional string status_msg = 2;    // 返回状态描述
+  repeated Message message_list = 3; // 消息列表
+}
