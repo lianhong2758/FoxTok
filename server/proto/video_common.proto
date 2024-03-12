@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-option go_package = "server/proto/common;common";
+option go_package = "server/proto;proto";
 
-import "server/proto/common/user.proto";
-
+import "video_user.proto";
+ 
 message Comment {
   int64 id = 1;           // 视频评论id
   User user = 2;          // 评论用户信息

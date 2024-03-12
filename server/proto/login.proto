@@ -1,8 +1,8 @@
 syntax = "proto3";
 
 
-option go_package = "server/proto/user;user";
-import "server/proto/common/user.proto";
+option go_package = "server/proto;proto";
+import "video_user.proto";
 
 message UserInfoRequest {
   int64 user_id = 1; // 用户id

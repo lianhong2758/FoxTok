@@ -1,8 +1,8 @@
 syntax = "proto3";
 
 
-option go_package = "server/proto/relation;relation";
-import "server/proto/common/user.proto";
+option go_package = "server/proto;proto";
+import "video_user.proto";
 
 message FollowActionRequest {
   string token = 1;      // 用户鉴权token

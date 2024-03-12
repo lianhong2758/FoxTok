@@ -1,8 +1,8 @@
 syntax = "proto3";
 
 
-option go_package = "server/proto/message;message";
-import "server/proto/common/message.proto";
+option go_package = "server/proto;proto";
+import "video_message.proto";
 
 message MessageActionRequest {
   string token = 1;      // 用户鉴权token

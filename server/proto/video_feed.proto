@@ -1,7 +1,7 @@
 syntax = "proto3";
 
-option go_package = "server/proto/feed;feed";
-import "server/proto/common/video.proto";
+option go_package = "server/proto;proto";
+import "video.proto";
 
 message FeedRequest {
   optional int64 latest_time = 1; // 可选参数，限制返回视频的最新投稿时间戳，精确到秒，不填表示当前时间

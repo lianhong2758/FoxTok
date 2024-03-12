@@ -1,9 +1,9 @@
 syntax = "proto3";
 
 
-option go_package = "server/proto/comment;comment";
-import "server/proto/common/comment.proto";
-
+option go_package = "server/proto;proto";
+import "video_common.proto";
+ 
 message CommentActionRequest {
   string token = 1;      // 用户鉴权token
   int64 video_id = 2;    // 视频id

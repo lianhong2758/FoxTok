@@ -1,13 +1,15 @@
 package route
 
 import (
+	"FoxTok/server/work"
+
 	"github.com/gin-gonic/gin"
 )
 
 func Init() {
 	gin.SetMode(gin.DebugMode)
 	r := gin.Default()                                    //初始化
-	dy := r.Group("/douyin", func(ctx *gin.Context) {})   //鉴权
+	dy := r.Group("/douyin", work.TokenPass)              //鉴权
 	dy.GET("/user", func(ctx *gin.Context) {})            //获取用户信息
 	dy.POST("/user/register", func(ctx *gin.Context) {})  // 用户注册接口
 	dy.POST("/user/login", func(ctx *gin.Context) {})     //用户登录接口

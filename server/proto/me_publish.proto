@@ -1,8 +1,7 @@
 syntax = "proto3";
 
-
-option go_package = "server/proto/publish;publish";
-import "server/proto/common/video.proto";
+option go_package = "server/proto;proto";
+import "video.proto";
 
 message PublishListRequest {
   int64 user_id = 1; // 用户id

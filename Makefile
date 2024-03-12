@@ -1,6 +1,6 @@
 NAME=FoxTok
 EXE_NAME=${NAME}.exe
-PROTOPATH=
+PROTOPATH=server/proto
 VERSION=0.0.1
 
 build:
@@ -8,10 +8,6 @@ build:
 	@go version
 	@go env -w GOPROXY=https://goproxy.cn,direct
 	@go mod tidy
-	@if ! command -v go-winres &> /dev/null; then \
-        echo "go-winres not found. Installing..."; \
-       go install github.com/tc-hib/go-winres@latest; \
-    fi
 	@go build
 	@echo "Done!"
 

@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package = "server/proto/common;common";
+option go_package = "server/proto;proto";
 
 message Message {
   int64 id = 1;                    // 消息id
