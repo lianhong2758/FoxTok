@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 
-option go_package = "server/proto;proto";
+option go_package = "server/template;template";
 import "video_user.proto";
 
 message UserInfoRequest {

@@ -1,6 +1,6 @@
 NAME=FoxTok
 EXE_NAME=${NAME}.exe
-PROTOPATH=server/proto
+PROTOPATH=server/template
 VERSION=0.0.1
 
 build:
