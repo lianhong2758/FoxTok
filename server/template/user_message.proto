@@ -2,7 +2,7 @@ syntax = "proto3";
 
 
 option go_package = "server/template;template";
-import "video_message.proto";
+import "message.proto";
 
 message MessageActionRequest {
   string token = 1;      // 用户鉴权token
