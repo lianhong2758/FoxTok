@@ -1,0 +1,11 @@
+db:
+    host: localhost
+    port: 5432
+    user: root
+    pass: "2758"
+    name: go
+gin:
+    host: 192.168.2.3
+    port: 9600
+    vip_video: http://localhost:8080/vip_video
+    video: http://localhost:8080/ideo

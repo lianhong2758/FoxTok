@@ -1,10 +1,12 @@
 package main
 
 import (
+	"FoxTok/config"
 	"FoxTok/server/route"
 	"FoxTok/server/sq"
 )
 func main(){
-	sq.Init()
-	route.Init()
+ config.ReadConfig("config.yml")
+	sq.Init( )
+	route.Init( )
 }

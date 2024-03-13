@@ -8,7 +8,7 @@ build:
 	@go version
 	@go env -w GOPROXY=https://goproxy.cn,direct
 	@go mod tidy
-	@go build
+	@cd cmd && go build
 	@echo "Done!"
 
 run:
@@ -16,14 +16,14 @@ run:
 	@go version
 	@go env -w GOPROXY=https://goproxy.cn,direct
 	@go mod tidy
-	@go run main.go
+	@cd cmd && go run main.go
 
 debug:
 	@echo "debug"
 	@go version
 	@go env -w GOPROXY=https://goproxy.cn,direct
 	@go mod tidy
-	@go run main.go -d
+	@cd cmd && go run main.go -d
 	
 build_proto:
 	@echo "build_proto!"
