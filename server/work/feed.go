@@ -3,9 +3,7 @@ package work
 import (
 	"FoxTok/server/sq"
 	"FoxTok/server/template"
-	"fmt"
 	"strconv"
-	"time"
 
 	"github.com/gin-gonic/gin"
 	"google.golang.org/protobuf/proto"
@@ -22,11 +20,11 @@ func Feed(ctx *gin.Context) {
 		result.StatusMsg = proto.String("Sucess")
 		videos := []*template.Video{}
 		sltime, _ := strconv.ParseInt(ltime, 10, 64)
-		videos = append(videos, sq.GetNextVideo(sltime))
+		v, t := sq.GetNextVideo(sltime, 0)
+		videos = append(videos, v)
 		result.VideoList = videos
-		result.NextTime = proto.Int64(time.Now().Unix())
+		result.NextTime = proto.Int64(t)
 	default:
 	}
-	fmt.Println(result)
 	ctx.JSON(200, result)
 }

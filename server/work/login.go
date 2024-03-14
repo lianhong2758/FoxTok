@@ -1,6 +1,7 @@
 package work
 
 import (
+	"FoxTok/server/sq"
 	"FoxTok/server/template"
 	"fmt"
 
@@ -10,7 +11,25 @@ import (
 
 func Register(ctx *gin.Context) {
 	name, pass := ctx.Query("username"), ctx.Query("password")
-	fmt.Println(name, pass)
+	if err:=sq.InsertPassWord(name, pass);err!=nil{
+		ctx.JSON(200, template.UserRegisterResponse{
+			StatusCode: 1,
+			StatusMsg:  proto.String( err.Error()),
+			UserId:     0,
+			Token:      "",
+		})
+		return
+	}
+	
+	if err:=sq.InsertUser(name, pass);err!=nil{
+		ctx.JSON(200, template.UserRegisterResponse{
+			StatusCode: 1,
+			StatusMsg:  proto.String( err.Error()),
+			UserId:     0,
+			Token:      "",
+		})
+		return
+	}
 	ctx.JSON(200, template.UserRegisterResponse{
 		StatusCode: 0,
 		StatusMsg:  proto.String("Sucess"),
